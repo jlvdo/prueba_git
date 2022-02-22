@@ -1,11 +1,5 @@
 <?php
-echo "<h1>-Hola Mundo- </h1>";
-echo "<br>";
-echo"Comenzando bloque para conexion a mysql  jesus<br>";
-$enlace=mysql_connect('db','root','1234');
-if (!$enlace){
-    die('No pudo conectarse: '. mysql_error());
-}
-echo 'Comectado satisfactoriamente';
-mysql_close($enlace);
+    echo "<h1> Bienvenidos a App I</h1>";
+    echo "<br>";
+    echo "<a href='dos.php'>Haz click para ir a dos.php</a>";
 ?>
