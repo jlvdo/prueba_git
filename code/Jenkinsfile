@@ -1,14 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Verificando Docker'){
-            steps {
-                sh 'docker images'
-            }
-        }
         stage('Construir rsphp'){
             steps{
-                sh './code/docker-compose down'
+                sh '/code/docker-compose down'
                 sh 'docker image rm rsphp'
                 sh 'docker build --tag=rsphp .'
                 sh 'docker images'
