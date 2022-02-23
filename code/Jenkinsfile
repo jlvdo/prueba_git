@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('Construir rsphp'){
             steps{
-                sh 'cd code'
-                sh 'docker-compose down'
+                sh 'cd code && docker-compose down'
                 sh 'docker image rm rsphp'
                 sh 'docker build --tag=rsphp .'
                 sh 'docker images'
