@@ -5,13 +5,13 @@ pipeline {
             steps{
                 sh 'cd code && docker-compose down'
                 sh 'docker image rm rsphp'
-                sh 'docker build --tag=rsphp .'
+                sh 'cd code && docker build --tag=rsphp .'
                 sh 'docker images'
             }
         }
         stage('Construir servicio rsphp + mysql'){
             steps{
-                sh 'docker-compose up -d'
+                sh 'cd code && docker-compose up -d'
             }
         }
     }
