@@ -11,9 +11,8 @@ pipeline {
                 sh 'cd code && docker-compose down'
                 sh 'docker image rm rsphp'
                 sh 'cd code && docker build --tag=rsphp .'
-                sh 'cp ./code/Dockerfile Dockerfile'
                     script{
-                        dockerImage= docker.build registro + ":dev"
+                        dockerImage= cd code && docker.build registro + ":dev"
                     }
                 sh 'docker images'
             }
