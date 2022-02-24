@@ -11,19 +11,7 @@ pipeline {
                 sh 'cd code && docker-compose down'
                 sh 'docker image rm rsphp'
                 sh 'cd code && docker build --tag=rsphp .'
-                    script{
-                        dockerImage= cd code && docker.build registro + ":dev"
-                    }
                 sh 'docker images'
-            }
-        }
-        stage ('Push a DockerHub'){
-            steps{
-                script {
-                    docker.withRegistry('',registroID){
-                        dockerImage.push()
-                    }
-                }
             }
         }
         stage('Construir servicio rsphp + mysql'){
