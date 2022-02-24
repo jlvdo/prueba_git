@@ -1,4 +1,9 @@
 pipeline {
+    enviroment{
+        registro="jlvd07/rsphp"
+        registroID="jlvd07"
+        dockerImage=""
+    }
     agent any
     stages {
         stage('Construir rsphp'){
